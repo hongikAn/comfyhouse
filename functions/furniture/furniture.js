@@ -14,12 +14,10 @@ exports.handler = async function (event, context) {
       content_type: "comfyHouseProduct",
     });
 
-    const data = response.items;
-
     return {
       statusCode: 200,
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(response),
     };
   } catch (err) {
     console.log("invocation error:", err); // output to netlify function log

@@ -20,7 +20,7 @@ class Products {
       const url = "/.netlify/functions/furniture";
       let result = await fetch(url);
       let data = await result.json();
-      console.log(data);
+
       // let result = await fetch("./products.json");
       // let data = await result.json();
 
