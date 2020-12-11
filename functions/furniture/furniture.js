@@ -1,21 +1,20 @@
+const contentful = require("contentful");
 const spaceId = process.env.CONTENTFUL_SPACE_ID;
 const deliveryId = process.env.CONTENTFUL_DELIVERY_API;
 
 exports.handler = async function (event, context) {
   try {
-    const contentful = require("contentful");
     const client = contentful.createClient({
       // This is the space ID. A space is like a project folder in Contentful terms
       space: spaceId,
       // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
       accessToken: deliveryId,
     });
-
-    let contentful = await client.getEntries({
+    let response = await client.getEntries({
       content_type: "comfyHouseProduct",
     });
 
-    const data = contentful.items;
+    const data = response.items;
 
     return {
       statusCode: 200,
