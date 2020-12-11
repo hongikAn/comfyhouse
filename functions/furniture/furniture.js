@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 exports.handler = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
