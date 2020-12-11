@@ -17,12 +17,12 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
-      // let contentful = await client.getEntries({
-      //   content_type: "comfyHouseProduct",
-      // });
-
-      let result = await fetch("./products.json");
+      const url = "/.netlify/functions/furniture";
+      let result = await fetch(url);
       let data = await result.json();
+      console.log(data);
+      // let result = await fetch("./products.json");
+      // let data = await result.json();
 
       let products = data.items;
       products = products.map((item) => {
