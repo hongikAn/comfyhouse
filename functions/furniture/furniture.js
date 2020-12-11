@@ -1,9 +1,9 @@
-const contentful = require("contentful");
 const spaceId = process.env.CONTENTFUL_SPACE_ID;
 const deliveryId = process.env.CONTENTFUL_DELIVERY_API;
 
 exports.handler = async function (event, context) {
   try {
+    const contentful = require("contentful");
     const client = contentful.createClient({
       // This is the space ID. A space is like a project folder in Contentful terms
       space: spaceId,
